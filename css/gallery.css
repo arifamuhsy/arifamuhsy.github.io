@@ -74,4 +74,16 @@
         width: 100%;
     }
 
+    .overlay{
+        position: relative;
+        background-color: transparent;
+        justify-content: space-evenly;
+        font-weight: bold;
+        opacity: 1;
+        width: auto;
+        height: auto;
+        color: black;
+        font-weight: 100;
+    }
+
 }
