@@ -56,6 +56,7 @@
     font-weight: bold;
     color: white;
     justify-content: center;
+    flex-direction: row;
 }
 
 .overlay > img {
@@ -77,8 +78,7 @@
     .overlay{
         position: relative;
         background-color: transparent;
-        justify-content: space-evenly;
-        font-weight: bold;
+        justify-content: space-between;
         opacity: 1;
         width: auto;
         height: auto;
