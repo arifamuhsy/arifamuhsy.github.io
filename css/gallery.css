@@ -65,6 +65,29 @@
 
 }
 
+.add-simp {
+    border: 1px solid #0099ff;
+    border-radius: 5px;
+    background-color: #0099ff;
+    color: white;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.add-simp:hover {
+    cursor: pointer;
+    background-color: white;
+    color: #0099ff;
+    border: 1px solid;
+    box-shadow: 0 0 5px #c9c9c9;
+    transition: all 200ms ease-in-out;
+    
+}
+
+.add-simp-mobile {
+    display: none;
+}
+
 .gallery-frame:hover .overlay{
     opacity: 70%;
     background-color: black;
@@ -84,6 +107,34 @@
         height: auto;
         color: black;
         font-weight: 100;
+    }
+
+    .add-simp {
+        display: none;
+    }
+
+    .add-simp-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: .6em;
+        position: fixed;
+        z-index: 1;
+        bottom: 2.5em;
+        right: .9em;
+        width: 56px;
+        height: 56px;
+        border: 0px solid;
+        border-radius: 50%;
+        background-color: #0099ff;
+        color: white;
+        font-size: xx-large;
+        text-shadow: 1.5px 1px #555;
+        cursor: pointer;
+    }
+
+    .add-simp-mobile:active {
+        background-color: #085d95;
     }
 
 }
