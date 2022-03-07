@@ -44,26 +44,6 @@ function statusPernikahan(marriageStatus,dependentChildrenCount){
 
 
 function calculateTax(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount) {
-    var pph = penghasilanKenaPajak(annualIncome,marriageStatus,dependentChildrenCount)
-    if(pph > 0){
-        pph = pph - (pph*0.1)
-        pph -= 200000000
-    }
-    if(pph > 0){
-        pph = pph - (pph*0.2)
-        pph -= 250000000
-    }
-    if(pph > 0){
-        pph = pph - (pph*0.1)
-        pph -= 200000000
-    }
-    if (pph < 0){
-        pph = 0
-    }
-
-    console.log(pph)
-
-
+   
     return penghasilanKenaPajak(annualIncome,marriageStatus,dependentChildrenCount)
 }
-console.log("Pajak",calculateTax(2024,'ujang',255000000,'tidak menikah',0))
