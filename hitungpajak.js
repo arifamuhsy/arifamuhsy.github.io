@@ -1,20 +1,25 @@
-const TidakKenaPajak = 50000000
+var TidakKenaPajak
 
-function penghasilanKenaPajak(annualIncome)
-{
+function penghasilanKenaPajak(annualIncome){
+    var TidakKenaPajak = 50000000
     var pkp = annualIncome - TidakKenaPajak
     if (pkp <= 200000000){
-        return pkp * .1
+        pkp *= .1
     }
 
-    if (pkp <= 450000000 && pkp > 200000000){
-        return pkp * .15
+    else if (pkp <= 450000000 && pkp > 200000000){
+        pkp *= .15
     }
 
-    if (pkp > 450000000){
-        return pkp * .2
+    else if (pkp > 450000000){
+        pkp *= .2
     }
+    if (pkp < 0){
+        return 0
+    }
+    return pkp
 }
+
 
 function calculateTax(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount) {
     // console.log(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount)
