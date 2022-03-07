@@ -1,7 +1,7 @@
 var TidakKenaPajak
 
-function penghasilanKenaPajak(annualIncome){
-    var TidakKenaPajak = 50000000
+function penghasilanKenaPajak(annualIncome,marriageStatus,dependentChildrenCount){
+    var TidakKenaPajak = statusPernikahan(marriageStatus,dependentChildrenCount)
     var pkp = annualIncome - TidakKenaPajak
     if (pkp <= 200000000){
         pkp *= .1
@@ -20,9 +20,29 @@ function penghasilanKenaPajak(annualIncome){
     return pkp
 }
 
+function Children(dependentChildrenCount){
+    var ChildrenCount = dependentChildrenCount * 15000000
+    return ChildrenCount
+}
+
+function statusPernikahan(marriageStatus,dependentChildrenCount){
+    if (marriageStatus == 'cerai'){
+        TidakKenaPajak = 70000000
+        return TidakKenaPajak + Children(dependentChildrenCount)
+    }
+    else if (marriageStatus == 'menikah'){
+        TidakKenaPajak = 60000000
+        return TidakKenaPajak + Children(dependentChildrenCount)
+    }
+    else if(marriageStatus == 'tidak menikah'){
+        TidakKenaPajak = 50000000
+        return TidakKenaPajak + Children(dependentChildrenCount)
+    }
+    return TidakKenaPajak
+}
 
 function calculateTax(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount) {
     // console.log(taxYear, name, annualIncome, marriageStatus, dependentChildrenCount)
-    return penghasilanKenaPajak(annualIncome)
+    return penghasilanKenaPajak(annualIncome,marriageStatus,dependentChildrenCount)
 }
-console.log("Pajak",calculateTax(2024,'arifa',350000000,'menikah',2))
+console.log("Pajak",calculateTax(2024,'ujang',600000000,'menikah',2))
